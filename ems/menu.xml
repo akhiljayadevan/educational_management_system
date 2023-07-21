@@ -1,0 +1,47 @@
+<odoo>
+    <menuitem
+            name="EMS2"
+            id="emsreport_menu_root"/>
+
+
+    <menuitem
+            name="Admission register"
+            id="reportems_menu"
+            parent="emsreport_menu_root"
+            action="education_action_window"/>
+
+    <menuitem
+            name="profiles"
+            id="reportems_menu1"
+            parent="emsreport_menu_root"/>
+
+
+    <menuitem
+            name="Teachers"
+            id="reportems_menu12"
+            parent="reportems_menu1"
+            action="profiles_action_window"/>
+
+
+        <menuitem
+            name="Parents"
+            id="reportems_menu123"
+            parent="reportems_menu1"
+            action="profiles_action_window2"/>
+
+    <menuitem
+            name="Reminders"
+            id="akh"
+            parent="emsreport_menu_root"
+            action="remindereducation_action"/>
+
+<!--        <menuitem-->
+<!--            name="Configuration"-->
+<!--            id="abcd"-->
+<!--            parent="emsreport_menu_root"-->
+<!--            action="config_action_window"/>-->
+
+
+
+
+</odoo>

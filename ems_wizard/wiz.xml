@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="akhil1">
+            <field name="name">REPORT</field>
+            <field name="model">ems.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </group>
+                    <footer>
+                        <button name="ems_pdf_report" string="pdf report" class="oe_highlight" type="object"></button>
+                        <button name="ems_excel_report" string="excel report" class="oe_highlight" type="object"></button>
+                        <button name="cancel" string="cancel" special="cancel"></button>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="ems_action">
+            <field name="name">REPORT</field>
+            <field name="res_model">ems.wizard</field>
+            <field name="view_mode">tree,form</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_id" ref="akhil1"></field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem name="EMS Report"
+                  id="reportlist"
+                  parent="emsreport_menu_root"
+                  action="ems_action"/>
+
+
+    </data>
+</odoo>

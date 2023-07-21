@@ -1,0 +1,200 @@
+<odoo>
+    <data>
+        <record id="teacher" model="ir.ui.view">
+        <field name="name">teacher_name_tree</field>
+        <field name="model">profiles.setting</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="teachersname"/>
+
+
+            </tree>
+        </field>
+        </record>
+
+
+
+         <record model="ir.actions.act_window" id="profiles_action_window">
+            <field name="name">profilesname</field>
+            <field name="res_model">profiles.setting</field>
+            <field name="view_mode">tree,form</field>
+
+         </record>
+
+
+         <record id="profilesform" model="ir.ui.view">
+            <field name="name">nameprofiles</field>
+            <field name="model">profiles.setting</field>
+            <field name ="arch" type="xml">
+                    <form string="details"  style="background-color: green;">
+                            <sheet>
+                                        <div class="oe_title">
+                                            <h6 style="color: black;">Empolyee Name</h6>
+                                        </div>
+
+                                            <div style="width:90%;">
+                                                <field name="teachersname" placeholder="Teachers Name"  style="font-size: 30px;"/>
+                                            </div>
+                                            <div style="width:300px;"><field name="time" placeholder="eg : part time"/></div>
+
+
+
+                                <group>
+                                        <field name="resofacaclass"/>
+                                        <field name="coursesubject"/>
+                                        <field name="campus" style="border:none;"/>
+                                        <field name="tick1"/>
+                                </group>
+                                <notebook>
+                                    <page string="Public Information">
+                                        <group>
+
+                                              <group string="Contact Information">
+                                                 <field name="workaddress"/>
+                                                 <field name="workmobile"/>
+                                                 <field name="worklocation"/>
+                                                 <field name="workemail"/>
+                                                 <field name="phonenumber"/>
+                                              </group>
+                                              <group string="Position">
+                                                <field name="department"/>
+                                                <field name="jobposition"/>
+                                                <field name="manager"/>
+                                                <field name="coach"/>
+                                              </group>
+
+                                      </group>
+                                        <div style="width:900px;">
+                                            <field name="otherinformation" placeholder="Other Information"/>
+                                        </div>
+                                    </page>
+                                    <page string="Personal Information">
+                                        <group>
+                                            <group string="Citizen Other Information">
+                                                <field name="nationality"/>
+                                                <field name="identificationno"/>
+                                                <field name="passportno"/>
+                                                <field name="bankaccountnumber"/>
+                                            </group>
+                                            <group string="Contact Information">
+                                                <field name="address"/>
+                                            </group>
+                                            <group string="Status">
+                                                <field name="gender"/>
+                                                <field name="martialstatus"/>
+                                            </group>
+                                            <group string="Birth">
+                                                <field name="dateofbirth"/>
+                                            </group>
+
+                                        </group>
+                                    </page>
+                                </notebook>
+
+                            </sheet>
+                    </form>
+            </field>
+         </record>
+
+
+<!-- SECOND SUB MENU CREATING (PARENTS)   -->
+
+
+        <record id="parents" model="ir.ui.view">
+        <field name="name">parents_name_tree</field>
+        <field name="model">profiles.parents</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="myname"/>
+            </tree>
+        </field>
+        </record>
+
+
+     <record model="ir.actions.act_window" id="profiles_action_window2">
+            <field name="name">profilesname</field>
+            <field name="res_model">profiles.parents</field>
+            <field name="view_mode">tree,form</field>
+     </record>
+
+             <record id="profilesform1" model="ir.ui.view">
+            <field name="name">nameprofiles</field>
+            <field name="model">profiles.parents</field>
+            <field name ="arch" type="xml">
+                    <form string="details">
+                            <sheet>
+                                <div style="width:65%;">
+                                    <field name="myname" placeholder="Name"  style="font-size: 24px;"/>
+                                </div>
+
+                                        <label for="relationwithchild" string="Relation With child"/>
+                                        <field name="relationwithchild" style="width:17%;"/>
+
+
+                                <group>
+                                        <group string="Postal Address">
+                                            <label for="street" string="Address"/>
+                                            <div class="o_address_format">
+                                                <field name="street" placeholder="Street" class="o_address_street"/>
+                                                <field name="street2" placeholder="Street 2" class="o_address_street"/>
+                                                <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>
+                                                <field name="city" placeholder="City" class="o_address_city"/>
+                                                <field name="state_id" class="o_address_state" placeholder="State"/>
+                                                <field name="pin" placeholder="Pin" class="o_address_zip"/>
+                                            </div>
+                                        </group>
+
+                                <group string="Communicaton">
+                                        <field name="phone"/>
+                                        <field name="mobile"/>
+                                        <field name="email"/>
+                                        <field name="title"/>
+                                        <field name="language" placeholder="language" options='{"no_open": True, "no_create": True}'/>
+                                        <field name="tags"/>
+                                </group>
+                             </group>
+                                <notebook>
+                                    <page string="Children">
+                                        <field name="mobile_ids">
+                                            <tree editable="bottom">
+                                                <field name="studentid"/>
+                                                <field name="name"/>
+                                                <field name="academicyear"/>
+                                                <field name="admissiondate"/>
+                                                <field name="gender"/>
+                                                <field name="status"/>
+                                                <field name="school"/>
+                                            </tree>
+<!--                                            <form>-->
+<!--                                                <group>-->
+<!--&lt;!&ndash;                                                    <field name="studentid"/>&ndash;&gt;-->
+<!--                                                    <field name="name"/>-->
+<!--                                                    <field name="academicyear"/>-->
+<!--                                                    <field name="admissiondate"/>-->
+<!--                                                    <field name="gender"/>-->
+<!--                                                    <field name="status"/>-->
+<!--                                                    <field name="school"/>-->
+<!--                                                </group>-->
+<!--                                            </form>-->
+                                        </field>
+                                    </page>
+                                    <page string="Internal Notes">
+                                        <group>
+                                            <div style="width:900px;">
+                                              <field name="internalnote" placeholder="internal note....."/>
+                                            </div>
+                                        </group>
+                                    </page>
+                                </notebook>
+
+                            </sheet>
+                    </form>
+            </field>
+         </record>
+</data>
+
+
+</odoo>
+
+
+

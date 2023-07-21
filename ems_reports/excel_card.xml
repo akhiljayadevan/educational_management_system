@@ -1,0 +1,42 @@
+<odoo>
+        <report
+            id="xlsxfile"
+            string="Card Excel"
+            model="education.management"
+            report_type="xlsx"
+            name="educational_management_system.report_card_xlsx"
+            file="educational_management_system.report_card_xlsx"/>
+
+
+
+        <report
+            id="xlsxfile"
+            string="Card Excel"
+            model="profiles.setting"
+            report_type="xlsx"
+            name="educational_management_system.report_card1_xlsx"
+            file="educational_management_system.report_card1_xlsx"/>
+
+
+
+        <report
+            id="xlsxfile"
+            string="Excel Report"
+            model="profiles.parents"
+            report_type="xlsx"
+            name="educational_management_system.report_card2_xlsx"
+            file="educational_management_system.report_card2_xlsx"/>
+
+
+
+
+        <report
+            id="xlsxfile"
+            string="Excel Report"
+            model="menu.reminders"
+            report_type="xlsx"
+            name="educational_management_system.report_card3_xlsx"
+            file="educational_management_system.report_card3_xlsx"/>
+
+</odoo>
+

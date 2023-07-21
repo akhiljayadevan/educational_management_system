@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_education_management,education.management,model_education_management,base.group_user,1,1,1,1
+access_parent_education,parent.education,model_parent_education,base.group_user,1,1,1,1
+access_reference_education,reference.education,model_reference_education,base.group_user,1,1,1,1
+access_previousschool_education,previousschool.education,model_previousschool_education,base.group_user,1,1,1,1
+access_familydetails_education,familydetails.education,model_familydetails_education,base.group_user,1,1,1,1
+access_profiles_setting,profiles.setting,model_profiles_setting,base.group_user,1,1,1,1
+access_profiles_parents,profiles.parents,model_profiles_parents,base.group_user,1,1,1,1
+access_children_setting,children.setting,model_children_setting,base.group_user,1,1,1,1
+access_menu_reminders,menu.reminders,model_menu_reminders,base.group_user,1,1,1,1
+access_menu_config,menu.config,model_menu_config,base.group_user,1,1,1,1
+access_ems_wizard,ems.wizard,model_ems_wizard,base.group_user,1,1,1,1
+
+
+
+

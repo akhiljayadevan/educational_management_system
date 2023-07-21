@@ -1,0 +1,199 @@
+<odoo>
+    <record id="education" model="ir.ui.view">
+        <field name="name">education_name_tree</field>
+        <field name="model">education.management</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="firstname"/>
+                <field name="middlename"/>
+                <field name="lastname"/>
+                <field name="seq"/>
+                <field name="image"/>
+            </tree>
+        </field>
+    </record>
+
+    <data>
+        <record model="ir.actions.act_window" id="education_action_window">
+            <field name="name">education</field>
+            <field name="res_model">education.management</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="educationform" model="ir.ui.view">
+            <field name="name">education name</field>
+            <field name="model">education.management</field>
+            <field name="arch" type="xml">
+                    <form string="details">
+                        <header>
+                              <button name="action_confirm" type="object" states="draft" string="Confirm" class="oe_highlight"/>
+                              <button name="action_done" type="object" states="confirm" string="Done" class="oe_highlight"/>
+                              <field name="state" widget="statusbar" options="{'clickable': '1'}"
+                               statusbar_visible="draft,confirm,done"/>
+                        </header>
+
+                            <sheet>
+
+                               <div class="oe_title">
+                                    <h1 style="color: blue;">Personal Information</h1>
+                                    <field name="image" widget="image" class="oe_left oe_avatar"/>
+                                    <group>
+                                        <h1><field name ="seq"/></h1>
+                                    </group>
+                               </div>
+                                   <div style="width: 300px">
+                                            <field name="firstname" placeholder="First Name"/>
+                                            <span>&amp;nbsp;</span>
+                                        <field name="middlename" placeholder="Middle Name"/>
+                                            <span>&amp;nbsp;</span>
+                                        <field name="lastname" placeholder="Last Name"/>
+                                    </div>
+                                <group>
+                                    <group string="School Information">
+                                        <field name="school" placeholder="School Name"/>
+                                        <field name="academicyear"/>
+                                    </group>
+                                    <group string="Class Information">
+                                        <field name="medium"/>
+                                        <field name="class1"/>
+                                    </group>
+                                    <group>
+                                        <label for="street" string="Address"/>
+                                            <div class="o_address_format">
+                                                <field name="street" placeholder="Street" class="o_address_street"/>
+                                                <field name="street2" placeholder="Street 2" class="o_address_street"/>
+                                                <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>
+                                                <field name="city" placeholder="City" class="o_address_city"/>
+                                                <field name="state_id" class="o_address_state" placeholder="State"/>
+                                                <field name="pin" placeholder="Pin" class="o_address_zip"/>
+                                            </div>
+                                    </group>
+                                    <group>
+                                        <field name="phone" placeholder="Phone Number"/>
+                                        <field name="mobile" placeholder="Mobile Number"/>
+                                        <field name="email" placeholder="Email Address"/>
+                                        <field name="websitelink" placeholder="eg:www.akhil.com"/>
+                                    </group>
+                                </group>
+                                <notebook>
+                                  <page string="General">
+                                    <group>
+                                      <group string="General Information">
+                                         <field name="gender" placeholder="Gender"/>
+                                         <field name="birthdate" placeholder="birthdate"/>
+                                         <field name="age"/>
+                                      </group>
+                                        <group><br></br><br></br><br></br>
+                                            <field name="mothertongue" placeholder="Mother Tongue"/>
+                                            <field name="admissiondate"/>
+                                            <field name="martialstatus" placeholder="Martial Status"/>
+                                        </group>
+                                        <group string="Emergency Contact Details">
+                                            <field name="phoneno"/>
+                                        </group>
+                                        <group><br></br><br></br><br></br>
+                                            <field name="mobileno"/>
+                                        </group>
+                                      </group>
+                                  </page>
+                                    <page string="parents">
+                                      <field name="parents_ids">
+                                           <tree>
+                                               <field name="name"/>
+                                               <field name="relationwithchild"/>
+                                               <field name="phone"/>
+                                               <field name="email"/>
+                                               <field name="city"/>
+                                               <field name="country"/>
+                                           </tree>
+                                           <form>
+                                             <group>
+                                                <field name="name"/>
+                                                <field name="relationwithchild"/>
+                                                <field name="phone"/>
+                                                <field name="email"/>
+                                                <field name="city"/>
+                                                <field name="country"/>
+
+                                            </group>
+                                           </form>
+                                      </field>
+                                   </page>
+                                    <page string="References">
+                                        <field name="references_ids">
+                                          <tree>
+                                            <field name="firstname"/>
+                                            <field name="middlename"/>
+                                            <field name="surname"/>
+                                            <field name="designation"/>
+                                            <field name="phone"/>
+                                          </tree>
+                                            <form>
+                                                <group>
+                                                    <field name="firstname"/>
+                                                    <field name="middlename"/>
+                                                    <field name="surname"/>
+                                                    <field name="designation"/>
+                                                    <field name="phone"/>
+                                                 </group>
+                                            </form>
+                                        </field>
+                                    </page>
+                                    <page string="Previous School">
+                                        <field name="previousschool_ids">
+                                                <tree>
+                                                    <field name="name"/>
+                                                    <field name="registrationno"/>
+                                                    <field name="admissiondate"/>
+                                                    <field name="exitdate"/>
+                                                    <field name="course"/>
+                                                </tree>
+                                            <form>
+                                              <group>
+                                                <field name="name"/>
+                                                <field name="registrationno"/>
+                                                <field name="admissiondate"/>
+                                                <field name="exitdate"/>
+                                                <field name="course"/>
+                                              </group>
+                                            </form>
+                                        </field>
+                                    </page>
+                                    <page string="Family Details">
+                                            <field name="familydetails_ids">
+                                                <tree>
+                                                    <field name="name"/>
+                                                    <field name="relation"/>
+                                                    <field name="phone"/>
+                                                </tree>
+                                                <form>
+                                                    <group>
+                                                        <field name="name"/>
+                                                        <field name="relation"/>
+                                                        <field name="phone"/>
+                                                    </group>
+                                                </form>
+                                            </field>
+                                    </page>
+                                        <page string="Remarks">
+
+
+                                                    <group>
+                                                        <field name="remark"/>
+                                                    </group>
+
+
+                                        </page>
+
+
+                                </notebook>
+                            </sheet>
+                    </form>
+            </field>
+
+        </record>
+
+
+    </data>
+
+</odoo>

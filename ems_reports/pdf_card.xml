@@ -1,0 +1,98 @@
+<odoo>
+	<report
+            id="report_card"
+            string="PDF Report"
+            model="education.management"
+            report_type="qweb-pdf"
+            name="educational_management_system.report_card2"
+            file="report_card2"/>
+
+
+	<template id="report_card2">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="doc">
+					<t t-call="web.external_layout">
+						<h2>Admision Card</h2>
+						<h5>First Name: <t t-esc="doc.firstname"/></h5>
+						<h5>Middle Name: <t t-esc="doc.middlename"/></h5>
+						<h5>Last Name: <t t-esc="doc.lastname"/></h5>
+						<h5>School Name: <t t-esc="doc.school"/></h5>
+						<h5>Academic Year: <t t-esc="doc.academicyear"/></h5>
+						<h5>street: <t t-esc="doc.street"/></h5>
+						<h5>street2: <t t-esc="doc.street2"/></h5>
+					</t>
+				</t>
+			</t>
+	</template>
+
+<!--#PROFILE Inside(Teachers)-->
+
+	<report
+            id="report_card1"
+            string="PDF Report"
+            model="profiles.setting"
+            report_type="qweb-pdf"
+            name="educational_management_system.report_card3"
+            file="report_card3"/>
+
+
+	<template id="report_card3">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="doc">
+					<t t-call="web.external_layout">
+						<h2>Teachers Card</h2>
+						<h5>Empolyee Name: <t t-esc="doc.empolyeename"/></h5>
+						<h5>Teachers Name: <t t-esc="doc.teachersname"/></h5>
+					</t>
+				</t>
+			</t>
+	</template>
+
+
+<!--	#profile inside (parents)-->
+
+	<report
+            id="report_card5"
+            string="PDF Report"
+            model="profiles.parents"
+            report_type="qweb-pdf"
+            name="educational_management_system.report_card4"
+            file="report_card4"/>
+
+
+	<template id="report_card4">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="doc">
+					<t t-call="web.external_layout">
+						<h2>parents Card</h2>
+						<h5>Name: <t t-esc="doc.myname"/></h5>
+						<h5>Internal notes: <t t-esc="doc.internalnote"/></h5>
+					</t>
+				</t>
+			</t>
+	</template>
+
+<!--	#remainder pdf making-->
+
+		<report
+            id="report_card6"
+            string="PDF Report"
+            model="menu.reminders"
+            report_type="qweb-pdf"
+            name="educational_management_system.report_card7"
+            file="report_card7"/>
+
+
+	<template id="report_card7">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="doc">
+					<t t-call="web.external_layout">
+						<h2>parents Card</h2>
+						<h5>Name: <t t-esc="doc.name"/></h5>
+						<h5>Second Name: <t t-esc="doc.secondname"/></h5>
+					</t>
+				</t>
+			</t>
+	</template>
+
+</odoo>

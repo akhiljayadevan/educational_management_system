@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="seq_education" model="ir.sequence">
+            <field name="name">sequence education</field>
+            <field name="code">1byorder</field>
+            <field name="prefix">EMS:</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>
